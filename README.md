@@ -173,5 +173,65 @@ bob@dylan:~$
 
   * [utils/redis.js](./utils/redis.js)
 
+**1. MongoDB utils**
+
+Inside the folder `utils`, create a file `db.js` that contains the class `DBClient`.
+
+`DBClient` should have:
+
+  * the constructor that creates a client to MongoDB:
+    * host: from the environment variable `DB_HOST` or default: `localhost`
+    * port: from the environment variable `DB_PORT` or default: `27017`
+    * database: from the environment variable `DB_DATABASE` or default: `files_manager`
+  * a function `isAlive` that returns `true` when the connection to MongoDB is a success otherwise, `false`
+  * an asynchronous function `nbUsers` that returns the number of documents in the collection `users`
+  * an asynchronous function `nbFiles` that returns the number of documents in the collection `files`
+
+After the class definition, create and export an instance of `DBClient` called `dbClient`.
+
+```
+bob@dylan:~$ cat main.js
+import dbClient from './utils/db';
+
+const waitConnection = () => {
+    return new Promise((resolve, reject) => {
+        let i = 0;
+        const repeatFct = async () => {
+            await setTimeout(() => {
+                i += 1;
+                if (i >= 10) {
+                    reject()
+                }
+                else if(!dbClient.isAlive()) {
+                    repeatFct()
+                }
+                else {
+                    resolve()
+                }
+            }, 1000);
+        };
+        repeatFct();
+    })
+};
+
+(async () => {
+    console.log(dbClient.isAlive());
+    await waitConnection();
+    console.log(dbClient.isAlive());
+    console.log(await dbClient.nbUsers());
+    console.log(await dbClient.nbFiles());
+})();
+
+bob@dylan:~$ npm run dev main.js
+false
+true
+4
+30
+bob@dylan:~$ 
+```
+
+  * [utils/db.js](./utils/db.js)
+
+**2. First API**
 
 
