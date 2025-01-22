@@ -1,4 +1,4 @@
-# 0x04. Files manage
+# 0x04. Files manager
 ## The Domains/Concepts covered in this project: `Back-end` `JavaScript` `ES6` `NoSQL` `MongoDB` `Redis` `NodeJS` `ExpressJS` `Kue`
 
 This project introduced me to building a Files Manager system, a backend application for handling file storage, organization, and retrieval. I learned how to implement file upload and download functionalities, manage file metadata, and ensure secure and efficient file handling using modern backend technologies.
