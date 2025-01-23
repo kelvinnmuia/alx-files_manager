@@ -701,3 +701,16 @@ Update the file `worker.js`:
     * Print in the console `Welcome <email>!`
 
 In real life, you can use a third party service like [Mailgun](https://www.mailgun.com/) to send real email. These API are slow, (sending via SMTP is worst!) and sending emails via a background job is important to optimize API endpoint.
+
+## Additional Project Resources
+
+  * [Node JS getting started](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
+  * [Process API doc](https://node.readthedocs.io/en/latest/api/process/)
+  * [Express getting started](https://expressjs.com/en/starter/installing.html)
+  * [Mocha documentation](https://mochajs.org/)
+  * [Nodemon documentation](https://github.com/remy/nodemon#nodemon)
+  * [MongoDB](https://github.com/mongodb/node-mongodb-native)
+  * [Bull](https://github.com/OptimalBits/bull)
+  * [Image thumbnail](https://www.npmjs.com/package/image-thumbnail)
+  * [Mime-Types](https://www.npmjs.com/package/mime-types)
+  * [Redis](https://github.com/redis/node-redis)
