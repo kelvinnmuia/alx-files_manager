@@ -684,3 +684,18 @@ Create tests for each endpoints:
   * `GET /files/:id/data`
 
   * [tests/](./tests/)
+
+**11. New user - welcome email**
+
+Update the endpoint POST /users endpoint to start a background processing for sending a “Welcome email” to the user:
+
+Create a Bull queue userQueue
+When a new user is stored (in DB), add a job to this queue with the userId
+Update the file worker.js:
+
+By using the module Bull, create a queue userQueue
+Process this queue:
+If userId is not present in the job, raise an error Missing userId
+If no document is found in DB based on the userId, raise an error User not found
+Print in the console Welcome <email>!
+In real life, you can use a third party service like Mailgun to send real email. These API are slow, (sending via SMTP is worst!) and sending emails via a background job is important to optimize API endpoint.
