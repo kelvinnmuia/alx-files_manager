@@ -368,7 +368,7 @@ bob@dylan:~$
 ```
 
   * [utils/](./utils/)
-  * [ routes/index.js](./ routes/index.js)
+  * [routes/index.js](./routes/index.js)
   * [controllers/UsersController.js](./controllers/UsersController.js)
   * [controllers/AuthController.js](./controllers/AuthController.js)
 
