@@ -661,3 +661,26 @@ bob@dylan:~$
   * [utils/](./utils/)
   * [controllers/FilesController.js](./controllers/FilesController.js)
   * [worker.js](./worker.js)
+
+**10. Tests!**
+
+Of course, a strong and stable project can not be good without tests.
+
+Create tests for `redisClient` and `dbClient`.
+
+Create tests for each endpoints:
+
+  * `GET /status`
+  * `GET /stats`
+  * `POST /users`
+  * `GET /connect`
+  * `GET /disconnect`
+  * `GET /users/me`
+  * `POST /files`
+  * `GET /files/:id`
+  * `GET /files` (don’t forget the pagination)
+  * `PUT /files/:id/publish`
+  * `PUT /files/:id/unpublish`
+  * `GET /files/:id/data`
+
+  * [tests/](./tests/)
